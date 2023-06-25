@@ -5,6 +5,9 @@ package com.zohosets.set21;
 //Input : abcdef
 //Output : ebcdaf
 
+//Input : kanagaraj
+//Output : kanagaraj
+
 public class VowelsReverse {
 
 	public static void main(String[] args) {
@@ -12,7 +15,7 @@ public class VowelsReverse {
 	}
 
 	private void getInput() {
-		String name = "kanagaraj";
+		String name = "abcdef";
 		reverseVowels(name.toCharArray());
 	}
 

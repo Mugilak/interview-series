@@ -17,10 +17,8 @@ public class NumberWithinNumber {
 	}
 
 	private void getInput() {
-		System.out.println("Enter first Number : ");
-		int number = input.nextInt();
-		System.out.println("Enter Second number : ");
-		int number2 = input.nextInt();
+		int number = 678095;
+		int number2 = 59;
 		System.out.println(isNumberPresent(number, number2));
 	}
 
@@ -29,24 +27,15 @@ public class NumberWithinNumber {
 		while (number > 0) {
 			digit = number % 10;
 			answer = (digit * j) + answer;
-			j *= 10;
-			number /= 10;
 			count++;
 			if (count == size) {
-				break;
-			}
-		}
-		if (answer == number2) {
-			return true;
-		}
-		while (number > 0) {
-			digit = number % 10;
-			answer = (digit * j) + answer;
-			j *= 10;
-			answer /= 10;
-			if (number2 == answer) {
-				return true;
-			}
+				if (answer == number2) {
+					return true;
+				}
+				answer /= 10;
+				count--;
+			} else
+				j *= 10;
 			number /= 10;
 		}
 		return false;
