@@ -16,18 +16,22 @@ public class BoxPattern {
 	}
 
 	private void printPattern(int n) {
-		int value1 = 0, value2 = 0;
+		int value1 = 0, value2 = 0, result=0;
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= n; j++) {
-				value1 = (i - n) < 0 ? -1 * (i - n) : i - n;
-				value2 = (j - n) < 0 ? -1 * (j - n) : j - n;
-				if ((j + i) <= n)
-					System.out.print(value1 < value2 ? value2 + 1 + " " : value1 + 1 + " ");
+//				value1 = (i - n) < 0 ? -1 * (i - n) : i - n;
+//				value2 = (j - n) < 0 ? -1 * (j - n) : j - n;
+				if ((j + i) <= n) {
+					value1 = n - i;
+					value2 = n - j;
+					result = (value1>value2) ? value1+1:value2+1;
+				}
 				else {
 					value1 = i;
 					value2 = j;
-					System.out.print(value1 < value2 ? value2 + " " : value1 + " ");
+					result = (value1>value2) ? value1:value2;
 				}
+				System.out.printf("%-3d",result);
 			}
 			System.out.println();
 		}

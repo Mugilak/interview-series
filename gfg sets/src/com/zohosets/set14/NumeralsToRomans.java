@@ -11,7 +11,7 @@ public class NumeralsToRomans {
 	}
 
 	private void getInput() {
-		System.out.println("Enter size : ");
+		System.out.println("Enter number : ");
 		int n = input.nextInt();
 		printRomans(n);
 	}

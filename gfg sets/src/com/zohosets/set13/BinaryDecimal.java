@@ -23,6 +23,26 @@ public class BinaryDecimal {
 		findBinaries(number, max);
 	}
 
+	private void findBinaryNumbers(int number) { //new one
+		int temp, binary, digit;
+		while (number > 0) {
+			temp = number;
+			binary = 0;
+			digit = 1;
+			while (temp > 0) {
+				if (temp % 10 == 0) {
+					binary = (0 * digit) + binary;
+				} else {
+					binary = (1 * digit) + binary;
+				}
+				digit *= 10;
+				temp /= 10;
+			}
+			System.out.print(binary + " ");
+			number -= binary;
+		}
+	}
+
 	private int findMax(int number) {
 		int max = 0;
 		while (number > 0) {
